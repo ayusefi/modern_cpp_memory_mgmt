@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include -I/usr/local/include/opencv -I/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/include 
+CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv -I/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/include 
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libimage_class.a  CMakeFiles/image_class.dir/task_2/src/image_class.cpp.o CMakeFiles/image_class.dir/task_2/src/io_tools.cpp.o
+/usr/bin/ranlib libimage_class.a

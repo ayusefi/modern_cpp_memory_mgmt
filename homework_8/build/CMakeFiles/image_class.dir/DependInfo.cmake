@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o"
+  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/image_class.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/image_class.dir/task_2/src/image_class.cpp.o"
+  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/io_tools.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/image_class.dir/task_2/src/io_tools.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/homework_8.h
+image_class.hpp
+../include/image_class.hpp
+io_tools.hpp
+../include/io_tools.hpp
+
+../include/image_class.hpp
+
+../include/io_tools.hpp
+cstddef
+-
+string
+-
+vector
+-
+
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/task_2.cpp
+iostream
+-
+string
+-
+vector
+-
+homework_8.h
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/homework_8.h
+

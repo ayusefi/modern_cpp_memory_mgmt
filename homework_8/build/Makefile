@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/b
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,6 +109,32 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named image_class
+
+# Build rule for target.
+image_class: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_class
+.PHONY : image_class
+
+# fast build rule for target.
+image_class/fast:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/build
+.PHONY : image_class/fast
+
+#=============================================================================
+# Target rules for targets named task_2
+
+# Build rule for target.
+task_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 task_2
+.PHONY : task_2
+
+# fast build rule for target.
+task_2/fast:
+	$(MAKE) -f CMakeFiles/task_2.dir/build.make CMakeFiles/task_2.dir/build
+.PHONY : task_2/fast
 
 #=============================================================================
 # Target rules for targets named stack_limit
@@ -150,18 +176,110 @@ task_1/src/task_1.cpp.s:
 	$(MAKE) -f CMakeFiles/stack_limit.dir/build.make CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.s
 .PHONY : task_1/src/task_1.cpp.s
 
+task_2/src/image_class.o: task_2/src/image_class.cpp.o
+
+.PHONY : task_2/src/image_class.o
+
+# target to build an object file
+task_2/src/image_class.cpp.o:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/image_class.cpp.o
+.PHONY : task_2/src/image_class.cpp.o
+
+task_2/src/image_class.i: task_2/src/image_class.cpp.i
+
+.PHONY : task_2/src/image_class.i
+
+# target to preprocess a source file
+task_2/src/image_class.cpp.i:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/image_class.cpp.i
+.PHONY : task_2/src/image_class.cpp.i
+
+task_2/src/image_class.s: task_2/src/image_class.cpp.s
+
+.PHONY : task_2/src/image_class.s
+
+# target to generate assembly for a file
+task_2/src/image_class.cpp.s:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/image_class.cpp.s
+.PHONY : task_2/src/image_class.cpp.s
+
+task_2/src/io_tools.o: task_2/src/io_tools.cpp.o
+
+.PHONY : task_2/src/io_tools.o
+
+# target to build an object file
+task_2/src/io_tools.cpp.o:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/io_tools.cpp.o
+.PHONY : task_2/src/io_tools.cpp.o
+
+task_2/src/io_tools.i: task_2/src/io_tools.cpp.i
+
+.PHONY : task_2/src/io_tools.i
+
+# target to preprocess a source file
+task_2/src/io_tools.cpp.i:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/io_tools.cpp.i
+.PHONY : task_2/src/io_tools.cpp.i
+
+task_2/src/io_tools.s: task_2/src/io_tools.cpp.s
+
+.PHONY : task_2/src/io_tools.s
+
+# target to generate assembly for a file
+task_2/src/io_tools.cpp.s:
+	$(MAKE) -f CMakeFiles/image_class.dir/build.make CMakeFiles/image_class.dir/task_2/src/io_tools.cpp.s
+.PHONY : task_2/src/io_tools.cpp.s
+
+task_2/src/task_2.o: task_2/src/task_2.cpp.o
+
+.PHONY : task_2/src/task_2.o
+
+# target to build an object file
+task_2/src/task_2.cpp.o:
+	$(MAKE) -f CMakeFiles/task_2.dir/build.make CMakeFiles/task_2.dir/task_2/src/task_2.cpp.o
+.PHONY : task_2/src/task_2.cpp.o
+
+task_2/src/task_2.i: task_2/src/task_2.cpp.i
+
+.PHONY : task_2/src/task_2.i
+
+# target to preprocess a source file
+task_2/src/task_2.cpp.i:
+	$(MAKE) -f CMakeFiles/task_2.dir/build.make CMakeFiles/task_2.dir/task_2/src/task_2.cpp.i
+.PHONY : task_2/src/task_2.cpp.i
+
+task_2/src/task_2.s: task_2/src/task_2.cpp.s
+
+.PHONY : task_2/src/task_2.s
+
+# target to generate assembly for a file
+task_2/src/task_2.cpp.s:
+	$(MAKE) -f CMakeFiles/task_2.dir/build.make CMakeFiles/task_2.dir/task_2/src/task_2.cpp.s
+.PHONY : task_2/src/task_2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... stack_limit"
 	@echo "... edit_cache"
+	@echo "... image_class"
+	@echo "... rebuild_cache"
+	@echo "... task_2"
+	@echo "... stack_limit"
 	@echo "... task_1/src/task_1.o"
 	@echo "... task_1/src/task_1.i"
 	@echo "... task_1/src/task_1.s"
+	@echo "... task_2/src/image_class.o"
+	@echo "... task_2/src/image_class.i"
+	@echo "... task_2/src/image_class.s"
+	@echo "... task_2/src/io_tools.o"
+	@echo "... task_2/src/io_tools.i"
+	@echo "... task_2/src/io_tools.s"
+	@echo "... task_2/src/task_2.o"
+	@echo "... task_2/src/task_2.i"
+	@echo "... task_2/src/task_2.s"
 .PHONY : help
 
 

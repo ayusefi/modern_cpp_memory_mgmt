@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o"
+  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/task_2.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/task_2.dir/task_2/src/task_2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,6 +17,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/image_class.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

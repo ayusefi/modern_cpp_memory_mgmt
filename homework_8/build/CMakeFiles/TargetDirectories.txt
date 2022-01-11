@@ -1,0 +1,3 @@
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/rebuild_cache.dir
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/stack_limit.dir
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/edit_cache.dir

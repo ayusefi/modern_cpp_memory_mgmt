@@ -1,18 +1,18 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <png++/png.hpp>
 #include <string>
 #include <vector>
 
 #include "homework_8.h"
-Image::Image()
-{
-}
-Image::Image(const std::string& filename)
-{
-  // igg::io_tools::ImageData image = igg::io_tools::ReadFromPgm(filename);
-  // data_ = image.data;
-  // rows_ = image.rows;
-  // cols_ = image.cols;
+Image::Image() {}
+Image::Image(const std::string& filename) {
+    png::image<png::rgb_pixel> image(filename);
+
+    // igg::io_tools::ImageData image = igg::io_tools::ReadFromPgm(filename);
+    // data_ = image.data;
+    // rows_ = image.rows;
+    // cols_ = image.cols;
 }
 
 // bool Image::FillFromPgm(const std::string& file_name)
@@ -65,8 +65,8 @@ Image::Image(const std::string& filename)
 
 // void Image::DownScale(int scale)
 // {
-//   std::vector<uint8_t> scaled_data(((rows_ + 1) / scale) * ((cols_ + 1) / scale), 0);
-//   for (int r = 0; r < (rows_ / scale); r++)
+//   std::vector<uint8_t> scaled_data(((rows_ + 1) / scale) * ((cols_ + 1) /
+//   scale), 0); for (int r = 0; r < (rows_ / scale); r++)
 //   {
 //     for (int c = 0; c < (cols_ / scale); c++)
 //     {
@@ -80,12 +80,13 @@ Image::Image(const std::string& filename)
 
 // void Image::UpScale(int scale)
 // {
-//   std::vector<uint8_t> scaled_data(((rows_ + 1) * scale) * ((cols_ + 1) * scale), 0);
-//   for (int r = 0; r < (rows_ * scale); r++)
+//   std::vector<uint8_t> scaled_data(((rows_ + 1) * scale) * ((cols_ + 1) *
+//   scale), 0); for (int r = 0; r < (rows_ * scale); r++)
 //   {
 //     for (int c = 0; c < (cols_ * scale); c++)
 //     {
-//       scaled_data[r * (cols_ * scale) + c] = at(std::floor(r / scale), std::floor(c / scale));
+//       scaled_data[r * (cols_ * scale) + c] = at(std::floor(r / scale),
+//       std::floor(c / scale));
 //     }
 //   }
 //   data_ = scaled_data;
@@ -93,17 +94,8 @@ Image::Image(const std::string& filename)
 //   cols_ = cols_ * scale;
 // }
 
-bool Image::empty()
-{
-  return (data_.empty());
-}
+bool Image::empty() { return (data_.empty()); }
 
 // getters
-const int Image::rows()
-{
-  return rows_;
-}
-const int Image::cols()
-{
-  return cols_;
-}
+const int Image::rows() { return rows_; }
+const int Image::cols() { return cols_; }

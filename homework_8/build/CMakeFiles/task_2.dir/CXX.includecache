@@ -22,7 +22,7 @@ string
 vector
 -
 
-/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/task_2.cpp
+/home/abdullah/cpp_learning/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/task_2.cpp
 iostream
 -
 string
@@ -30,5 +30,5 @@ string
 vector
 -
 homework_8.h
-/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/homework_8.h
+/home/abdullah/cpp_learning/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_2/src/homework_8.h
 

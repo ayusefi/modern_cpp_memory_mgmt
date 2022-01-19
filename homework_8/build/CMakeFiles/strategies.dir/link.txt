@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstrategies.a  CMakeFiles/strategies.dir/task_2/src/IoStrategy.cpp.o
+/usr/bin/ranlib libstrategies.a

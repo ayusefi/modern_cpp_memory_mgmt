@@ -3,16 +3,35 @@
 #include <png++/png.hpp>
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "homework_8.h"
-Image::Image() {}
-Image::Image(const std::string& filename) {
-    png::image<png::rgb_pixel> image(filename);
+Image::Image()
+{
+}
+Image::Image(const std::string& filename)
+{
+  png::image<png::rgb_pixel> image(filename);
 
-    // igg::io_tools::ImageData image = igg::io_tools::ReadFromPgm(filename);
-    // data_ = image.data;
-    // rows_ = image.rows;
-    // cols_ = image.cols;
+  cols_ = image.get_width();
+  rows_ = image.get_height();
+
+  std::vector<int> red(rows_ * cols_, 0);
+  std::vector<int> green(rows_ * cols_, 0);
+  std::vector<int> blue(rows_ * cols_, 0);
+  for (int r = 0; r < rows_; ++r)
+  {
+    for (int c = 0; c < cols_; ++c)
+    {
+      int idx = r * cols_ + c;
+      red[idx] = image[r][c].red;
+      green[idx] = image[r][c].green;
+      blue[idx] = image[r][c].blue;
+      Pixel pix = Pixel({ red[idx], green[idx], blue[idx] });
+      data_.emplace_back(pix);
+    }
+  }
+  //   data_ = { red, green, blue };
 }
 
 // bool Image::FillFromPgm(const std::string& file_name)
@@ -94,8 +113,22 @@ Image::Image(const std::string& filename) {
 //   cols_ = cols_ * scale;
 // }
 
-bool Image::empty() { return (data_.empty()); }
+bool Image::empty()
+{
+  return (data_.empty());
+}
 
 // getters
-const int Image::rows() { return rows_; }
-const int Image::cols() { return cols_; }
+const int Image::rows()
+{
+  return rows_;
+}
+const int Image::cols()
+{
+  return cols_;
+}
+
+void Image::SetIoStrategy(std::shared_ptr<IoStrategy> strategy_ptr)
+{
+  std::cout << "TEST" << std::endl;
+}

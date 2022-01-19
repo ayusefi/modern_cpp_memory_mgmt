@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../task_1/bin/stack_limit"
-  "../task_1/bin/stack_limit.pdb"
   "CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o"
+  "../task_1/bin/stack_limit.pdb"
+  "../task_1/bin/stack_limit"
 )
 
 # Per-language clean rules from dependency scanning.

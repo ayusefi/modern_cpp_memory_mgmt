@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/abdullah/cpp_learning/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp" "/home/abdullah/cpp_learning/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o"
+  "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp" "/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/build/CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/include/opencv4"
+  "/usr/local/include"
+  "/usr/local/include/opencv"
   "../include"
   )
 

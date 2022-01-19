@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o -o ../task_1/bin/stack_limit 
+/usr/lib/ccache/c++    -rdynamic CMakeFiles/stack_limit.dir/task_1/src/task_1.cpp.o  -o ../task_1/bin/stack_limit 

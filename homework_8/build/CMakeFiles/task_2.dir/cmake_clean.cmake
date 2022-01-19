@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../task_2/bin/task_2"
-  "../task_2/bin/task_2.pdb"
   "CMakeFiles/task_2.dir/task_2/src/task_2.cpp.o"
+  "../task_2/bin/task_2.pdb"
+  "../task_2/bin/task_2"
 )
 
 # Per-language clean rules from dependency scanning.

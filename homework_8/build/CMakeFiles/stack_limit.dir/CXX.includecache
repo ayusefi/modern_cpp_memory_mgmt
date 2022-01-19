@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/abdullah/cpp_learning/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp
+/home/abdullah/modern_cpp/modern_cpp_memory_mgmt/homework_8/task_1/src/task_1.cpp
 iostream
 -
 cmath

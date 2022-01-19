@@ -16,8 +16,8 @@ public:
   // bool FillFromPgm(const std::string& file_name);
   // void WriteToPgm(const std::string& file_name);
   // std::vector<float> ComputeHistogram(int bins) const;
-  // void DownScale(int scale);
-  // void UpScale(int scale);
+  void DownScale(int scale);
+  void UpScale(int scale);
 
 public:
   struct Pixel
@@ -40,9 +40,13 @@ public:
     return data_[row * cols_ + col];
   }
   void SetIoStrategy(std::shared_ptr<IoStrategy> strategy_ptr);
+  bool ReadFromDisk(const std::string& file_name);
+  void WriteToDisk(const std::string& file_name) const;
 
 private:
   std::vector<Pixel> data_;
   int rows_;
   int cols_;
+  int max_val_;
+  std::shared_ptr<IoStrategy> strat_ = nullptr;
 };

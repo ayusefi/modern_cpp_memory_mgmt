@@ -82,36 +82,37 @@ Image::Image(const std::string& filename)
 //   return histogram;
 // }
 
-// void Image::DownScale(int scale)
-// {
-//   std::vector<uint8_t> scaled_data(((rows_ + 1) / scale) * ((cols_ + 1) /
-//   scale), 0); for (int r = 0; r < (rows_ / scale); r++)
-//   {
-//     for (int c = 0; c < (cols_ / scale); c++)
-//     {
-//       scaled_data[r * (cols_ / scale) + c] = at(r * scale, c * scale);
-//     }
-//   }
-//   data_ = scaled_data;
-//   rows_ = rows_ / scale;
-//   cols_ = cols_ / scale;
-// }
+void Image::DownScale(int scale)
+{
+  std::vector<Pixel> scaled_data(((rows_ + 1) / scale) * ((cols_ + 1) / scale));
+  for (int r = 0; r < (rows_ / scale); r++)
+  {
+    for (int c = 0; c < (cols_ / scale); c++)
+    {
+      scaled_data[r * (cols_ / scale) + c] = at(r * scale, c * scale);
+    }
+  }
+  data_.resize(((rows_ + 1) / scale) * ((cols_ + 1) / scale));
+  data_ = scaled_data;
+  rows_ = rows_ / scale;
+  cols_ = cols_ / scale;
+}
 
-// void Image::UpScale(int scale)
-// {
-//   std::vector<uint8_t> scaled_data(((rows_ + 1) * scale) * ((cols_ + 1) *
-//   scale), 0); for (int r = 0; r < (rows_ * scale); r++)
-//   {
-//     for (int c = 0; c < (cols_ * scale); c++)
-//     {
-//       scaled_data[r * (cols_ * scale) + c] = at(std::floor(r / scale),
-//       std::floor(c / scale));
-//     }
-//   }
-//   data_ = scaled_data;
-//   rows_ = rows_ * scale;
-//   cols_ = cols_ * scale;
-// }
+void Image::UpScale(int scale)
+{
+  std::vector<Pixel> scaled_data(((rows_ + 1) * scale) * ((cols_ + 1) * scale));
+  for (int r = 0; r < (rows_ * scale); r++)
+  {
+    for (int c = 0; c < (cols_ * scale); c++)
+    {
+      scaled_data[r * (cols_ * scale) + c] = at(std::floor(r / scale), std::floor(c / scale));
+    }
+  }
+  data_.resize(((rows_ + 1) * scale) * ((cols_ + 1) * scale));
+  data_ = scaled_data;
+  rows_ = rows_ * scale;
+  cols_ = cols_ * scale;
+}
 
 bool Image::empty()
 {
@@ -130,5 +131,42 @@ const int Image::cols()
 
 void Image::SetIoStrategy(std::shared_ptr<IoStrategy> strategy_ptr)
 {
-  std::cout << "TEST" << std::endl;
+  strat_ = strategy_ptr;
+}
+
+bool Image::ReadFromDisk(const std::string& file_name)
+{
+  ImageData data = strat_->ReadFromDisk(file_name);
+  rows_ = data.rows;
+  cols_ = data.cols;
+  max_val_ = data.max_val;
+  std::vector<Pixel> data_pix;
+
+  for (auto pix : data.data)
+  {
+    data_pix.emplace_back(Pixel({ pix.at(0), pix.at(1), pix.at(2) }));
+  }
+  data_ = data_pix;
+
+  if (rows_ == 0 && cols_ == 0)
+  {
+    return false;
+  }
+  return true;
+}
+
+void Image::WriteToDisk(const std::string& file_name) const
+{
+  ImageData data;
+  data.rows = rows_;
+  data.cols = cols_;
+  data.max_val = max_val_;
+  std::vector<std::array<int, 3>> data_array;
+  for (auto pix : data_)
+  {
+    std::array<int, 3> rgb = { pix.red, pix.green, pix.blue };
+    data_array.push_back(rgb);
+  }
+  data.data = data_array;
+  strat_->WriteToDisk(data, file_name);
 }

@@ -7,6 +7,14 @@
 #IncludeRegexTransform: 
 
 ../include/IoStrategy.hpp
+cstdint
+-
+vector
+-
+array
+-
+string
+-
 
 ../include/homework_8.h
 image_class.hpp

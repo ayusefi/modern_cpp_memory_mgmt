@@ -1,3 +1,13 @@
+/* 
+ *  This is the default license template.
+ *  
+ *  File: IoStrategy.cpp
+ *  Author: abdullah
+ *  Copyright (c) 2022 abdullah
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 #include "homework_8.h"
 
 ImageData PngIoStrategy::ReadFromDisk(const std::string& file_name)

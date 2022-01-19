@@ -1,3 +1,13 @@
+/* 
+ *  This is the default license template.
+ *  
+ *  File: io_tools.cpp
+ *  Author: abdullah
+ *  Copyright (c) 2022 abdullah
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 // @file       io_tools.cpp
 // @author     Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
 // @maintainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
